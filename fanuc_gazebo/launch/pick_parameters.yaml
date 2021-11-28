@@ -1,0 +1,13 @@
+#yaml file that contains the pick pose configuration in different cases
+
+pick_pose_01: [0.0002, 2.2494, 0.2401, -90, -90, 0]
+
+pick_pose_02: [1.700, 1.5630, 0.2630, 180, -90, 0]
+
+pick_pose_03: [-1.3184, 1.3216, 0.253, 0.0, -90, 0]
+
+pick_pose_04: [0.006, 2.164, 0.2630, -90, -90, 0]
+
+pick_pose_05: [-1.4074, 1.7108, 0.284, 0, -90, 0]
+
+pick_pose_r01: [-0.5604, 1.0886, 0.741, 0, -90, 0]

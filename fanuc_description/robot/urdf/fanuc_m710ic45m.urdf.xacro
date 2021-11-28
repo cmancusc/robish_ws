@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<robot name="fanuc_m710ic45m" xmlns:xacro="http://ros.org/wiki/xacro">
+    
+    <!-- links: main serial chain -->
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/base_link.stl" />
+            </geometry>
+	    <material name="black">
+	      <color rgba="0.1 0.1 0.1 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/base_link.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="49.9875" />
+            <inertia ixx="1.7128" ixy="0.0082" ixz="-0.2052"
+                     iyy="1.9363" iyz="-0.0182" izz="2.0645" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "base_link" >
+	    <material>Gazebo/Black</material>
+    </gazebo>
+
+    <link name="link_1">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_1.stl" />
+            </geometry>
+	    <material name="yellow">
+	      <color rgba="${255/255} ${226/255} ${0/255} 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_1.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="42.2303" />
+            <inertia ixx="10.4022" ixy="0.0257" ixz="1.3018"
+                     iyy="10.3065" iyz="-0.1891" izz="1.5116" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_1" >
+	    <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <link name="link_2">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_2.stl" />
+            </geometry>
+	    <material name="yellow">
+	      <color rgba="${255/255} ${226/255} ${0/255} 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_2.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="29.1829" />
+            <inertia ixx="40.7298" ixy="0.7735" ixz="4.8350"
+                     iyy="40.5425" iyz="5.7683" izz="1.7171" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_2" >
+	    <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <link name="link_3">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_3.stl" />
+            </geometry>
+	    <material name="yellow">
+	      <color rgba="${255/255} ${226/255} ${0/255} 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_3.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="36.2301" />
+            <inertia ixx="117.8730" ixy="-0.0980" ixz="9.9190"
+                     iyy="118.7740" iyz="-2.0492" izz="1.5370" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_3" >
+	    <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <link name="link_4">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_4.stl" />
+            </geometry>
+	    <material name="yellow">
+	      <color rgba="${255/255} ${226/255} ${0/255} 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_4.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="13.1006" />
+            <inertia ixx="46.5856" ixy="-0.1442" ixz="22.9179"
+                     iyy="59.3083" iyz="-0.1881" izz="12.7608" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_4" >
+	    <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <link name="link_5">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_5.stl" />
+            </geometry>
+	    <material name="yellow">
+	      <color rgba="${255/255} ${226/255} ${0/255} 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_5.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.9463" />
+            <inertia ixx="6.9234" ixy="0.0525" ixz="5.5750"
+                     iyy="11.4183" iyz="0.0667" izz="4.5056" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_5" >
+	<material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <link name="link_6">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/visual/link_6.stl" />
+            </geometry>
+	    <material name="black">
+	      <color rgba="0.1 0.1 0.1 1"/>
+	    </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/robot/meshes/fanuc_m710ic45m/collision/link_6.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.2230" />
+            <inertia ixx="0.7927" ixy="0.0" ixz="0.6763"
+                     iyy="1.3698" iyz="0.0" izz="0.5776" />
+        </inertial>
+    </link>
+
+    <gazebo reference= "link_6" >
+	    <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- joints: main serial chain -->
+    <link name="world" />
+
+    <joint name="world_joint" type="fixed">
+        <origin rpy="0 0 1.570796327" xyz="0 0 1.002" />
+        <parent link="world" />
+        <child link="base_link" />
+    </joint>
+    <joint name="joint_1" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.565" />
+        <parent link="base_link" />
+        <child link="link_1" />
+        <axis xyz="0 0 1" />
+        <limit effort="0" lower="-3.14159265359" upper="3.14159265359" velocity="3.14159265359" />
+    </joint>
+    <joint name="joint_2" type="revolute">
+        <origin rpy="0 0 0" xyz="0.150 0 0" />
+        <parent link="link_1" />
+        <child link="link_2" />
+        <axis xyz="0 1 0" />
+        <limit effort="0" lower="-1.57079632679" upper="2.35619449019" velocity="3.14159265359" />
+    </joint>
+    <joint name="joint_3" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 1.150" />
+        <parent link="link_2" />
+        <child link="link_3" />
+        <axis xyz="0 -1 0" />
+        <limit effort="0" lower="-2.79252680319" upper="4.88692190558" velocity="3.14159265359" />
+    </joint>
+    <joint name="joint_4" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.170" />
+        <parent link="link_3" />
+        <child link="link_4" />
+        <axis xyz="-1 0 0" />
+        <limit effort="0" lower="-6.98131700798" upper="6.98131700798" velocity="4.36332312999" />
+    </joint>
+    <joint name="joint_5" type="revolute">
+        <origin rpy="0 0 0" xyz="1.295 0 0" />
+        <parent link="link_4" />
+        <child link="link_5" />
+        <axis xyz="0 -1 0" />
+        <limit effort="0" lower="-2.18166156499" upper="2.18166156499" velocity="4.36332312999" />
+    </joint>
+    <joint name="joint_6" type="revolute">
+        <origin rpy="0 0 0" xyz="0.175 0 0" />
+        <parent link="link_5" />
+        <child link="link_6" />
+        <axis xyz="-1 0 0" />
+        <limit effort="0" lower="-6.98131700798" upper="6.98131700798" velocity="6.28318530718" />
+    </joint>
+    <!-- ROS-Industrial 'base' frame: base_link to Fanuc World Coordinates transform -->
+    <link name="base" />
+    <joint name="base_link-base" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0.565" />
+        <parent link="base_link" />
+        <child link="base" />
+    </joint>
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="flange" />
+    <joint name="joint_6-flange" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <parent link="link_6" />
+        <child link="flange" />
+    </joint>
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <link name="tool0" />
+    <joint name="link_6-tool0" type="fixed">
+        <origin rpy="3.14159265359 -1.57079632679 0" xyz="0 0 0" />
+        <parent link="flange" />
+        <child link="tool0" />
+    </joint>
+    
+    <transmission name="trans_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>1.570796327
+        <actuator name="joint_2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_5_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_6_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+<!--
+    <gazebo>
+        <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+            <robotNamespace>/fanuc_m710ic45m</robotNamespace>
+        </plugin>
+    </gazebo>
+-->
+<gazebo>
+  <plugin name="ros_control" filename="libgazebo_ros_control.so">
+    <legacyModeNS>false</legacyModeNS>
+    <robotNamespace>/</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  </plugin>
+</gazebo>
+
+<gazebo>
+	<plugin filename="libgazebo_ros_moveit_planning_scene.so" name="gazebo_ros_moveit_planning_scene">
+		<topicName>/planning_scene</topicName>
+ 		<sceneName>laboratory</sceneName>
+		<robotName>fanuc_m710ic45m</robotName>
+		<updatePeriod>0.5</updatePeriod>
+	</plugin>
+</gazebo>
+
+
+</robot>

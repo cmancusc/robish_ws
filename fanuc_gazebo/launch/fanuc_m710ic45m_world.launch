@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find fanuc_gazebo)/worlds/fanuc_nogravity.world"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0.0"/>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="$(find xacro)/xacro  --inorder '$(find fanuc_description)/robot/urdf/fanuc_m710ic45m.urdf.xacro'"/>
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="fanuc_m710ic45m_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" 
+	args="-urdf -param robot_description -model fanuc_m710ic45m -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+  <!-- launch files -->
+  <include file="$(find fanuc_control)/launch/fanuc_m710ic45m_control.launch"/>
+
+</launch>

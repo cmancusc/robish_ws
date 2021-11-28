@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>fanuc_control</name>
+  <version>0.0.3</version>
+  <description>The fanuc_control package</description>
+
+  <maintainer email="cristian.mancus@unimore.it">Cristian Mancus</maintainer>
+
+  <license>BSD-3</license>
+
+  <author email="cristian.mancus@unimore.it">Cristian Mancus</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>ros_control</build_depend>
+  <build_depend>ros_controllers</build_depend>
+
+  <run_depend>ros_control</run_depend>
+  <run_depend>ros_controllers</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rqt_gui</run_depend>
+
+  <export>
+  </export>
+</package>

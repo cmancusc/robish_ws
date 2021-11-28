@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--Broadcast static tf for robot root-->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_1" args="0 0 0 0 0 0 world base_link 100"/> -->
+
+  <!--Launch joint state publisher-->
+  <!-- joint_state_publisher viene lanciato e pubblicato da gazebo durante la simulazione -->
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+
+  <!-- # The planning and execution components of MoveIt! configured to 
+       # publish the current configuration of the robot (simulated or real) 
+       # and the current state of the world as seen by the planner -->
+
+  <include file="$(find fanuc_m710ic45m_moveit)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <!-- # The visualization component of MoveIt! -->
+  <include file="$(find fanuc_m710ic45m_moveit)/launch/moveit_rviz.launch"/>
+
+  <arg name="PICK_PARAMS_FILE" default="$(find fanuc_gazebo)/launch/pick_parameters.yaml" />
+  <rosparam file="$(arg PICK_PARAMS_FILE)" command="load"/>
+
+
+  <arg name="planning_plugin" value="ompl_interface/OMPLPlanner" />
+  <arg name="planning_adapters" value="default_planner_request_adapters/AddTimeParameterization default_planner_request_adapters/FixWorkspaceBounds default_planner_request_adapters/FixStartStateBounds default_planner_request_adapters/FixStartStateCollision default_planner_request_adapters/FixStartStatePathConstraints" />
+
+  <!-- <node name="motion_planning_pipeline_tutorial" pkg="moveit_tutorials" type="motion_planning_pipeline_tutorial" respawn="false" launch-prefix="$(arg launch_prefix)" output="screen"> -->
+  <node name="motion_planning_pipeline" pkg="fanuc_planning" type="planning_pipeline_node" respawn="false" launch-prefix= "gdb --ex run --args" output="screen">
+    <param name="planning_plugin" value="$(arg planning_plugin)" />
+    <param name="request_adapters" value="$(arg planning_adapters)" />
+    <param name="start_state_max_bounds_error" value="0.1" />
+  </node>
+
+</launch>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>fanuc_gazebo</name>
+  <version>0.0.4</version>
+  <description>The fanuc_gazebo package</description>
+
+  <maintainer email="cristian.mancus@unimore.it">Cristian Mancus</maintainer>
+
+  <license>BSD-3</license>
+
+  <author email="cristian.mancus@unimore.it">Cristian Mancus</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>
